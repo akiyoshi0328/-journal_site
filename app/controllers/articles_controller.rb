@@ -18,11 +18,6 @@ class ArticlesController < ApplicationController
     @article.save 
     redirect_to @article
   end
-  private
-
-  def article_params
-    params.require(:article).permit(:title,:body) 
-  end
 
   def edit
     @article =Article.find(params[:id])
@@ -34,11 +29,18 @@ class ArticlesController < ApplicationController
     redirect_to @article
   end
 
-  def destroy
+  def   destroy
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path
   end
+
+  private
+
+  def article_params
+    params.require(:article).permit(:title,:body) 
+  end
+
 
 
 
