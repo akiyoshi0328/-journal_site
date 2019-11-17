@@ -1,0 +1,12 @@
+<h1>論文一覧</h1>
+
+
+<ul>
+  <% @articles.each do |article|  %>
+    <li>  <%= link_to article.title, article %>   </li>
+  <% end  %>
+</ul>
+
+<%# パスの確認をして以下を記入すること %>
+
+<%= link_to "投稿する",   new_article_path %>
