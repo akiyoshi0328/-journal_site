@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
   def show
-    @article = Article.find(prams[:id])
+    @article = Article.find(params[:id])
 
   end
 
@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.reqire(:article).permit(:title,:body) 
+    params.require(:article).permit(:title,:body) 
   end
 
   def edit
